@@ -1,0 +1,11 @@
+<select [(ngModel)]="selectedCarModelId" (change)="onSelect($event.target.value)">
+  <option *ngIf='selectedCarModelId == 0' value="0">--Select--</option>
+  <option *ngFor="let carmodel of carmodels" value="{{carmodel.id}}">{{carmodel.name}}</option>
+</select>
+
+<div class="info">
+    <img src="{{selectedCarModel.img}}" />
+    <textarea>
+    {{selectedCarModel.description}}
+  </textarea>
+</div>

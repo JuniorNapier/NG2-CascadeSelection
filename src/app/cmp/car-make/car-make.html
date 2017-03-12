@@ -1,0 +1,13 @@
+<label>Car Make:</label>
+<select [(ngModel)]="selectedCarMake.id">
+  <option value="0">--Select--</option>
+  <option *ngFor="let carmake of carmakes" value="{{carmake.id}}">{{carmake.name}}</option>
+</select>
+
+<br/><br/>
+<div *ngIf='selectedCarMake.id != 0'>
+    <label>Car Model: </label>
+    <app-car-model-dropdown [carmake]="selectedCarMake.id"></app-car-model-dropdown>
+</div>
+
+<hr/>
